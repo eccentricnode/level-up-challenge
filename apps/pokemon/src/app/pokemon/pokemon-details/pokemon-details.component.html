@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <form>
+        <h1>
+          <span *ngIf="currentPokemon.id; else elseBlock">
+            {{originalName}} 
+            <img [src]="currentPokemon.sprites">
+          </span>
+          <ng-template #elseBlock>Click on a Pokemon Listing!</ng-template>
+        </h1>
+      </form>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="group">
+    <mat-card-content class="card-content">
+      <mat-form-field>
+        <strong>Height: </strong>
+        <input matInput formControlName="height">
+      </mat-form-field>
+      <mat-form-field>
+        <strong>Weight: </strong>
+        <input matInput formControlName="weight">
+      </mat-form-field>
+      <mat-form-field>
+        <strong>Base Experience: </strong>
+        <input matInput formControlName="base_experience">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="accent" mat-raised-button
+        (click)="resetPokemonSubmit()">
+        reset
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
