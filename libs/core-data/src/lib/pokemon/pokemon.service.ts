@@ -20,7 +20,6 @@ export class PokemonService {
   }
 
   getUrlWithId(pokemon): Observable<PokemonMeta> {
-    console.log(pokemon);
     return this.http.get<PokemonMeta>(pokemon);
   }
 

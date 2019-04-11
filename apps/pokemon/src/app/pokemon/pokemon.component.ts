@@ -26,7 +26,6 @@ export class PokemonComponent implements OnInit {
 
   selectPokemon(pokemon) {
     this.selectedPokemon$ = this.pokemonService.getUrlWithId(pokemon.url);
-    console.log(this.selectedPokemon$);
   }
 
   resetPokemon() {
