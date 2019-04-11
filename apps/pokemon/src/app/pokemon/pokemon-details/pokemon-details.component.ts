@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { PokemonMeta } from '@level/core-data';
 
@@ -12,13 +12,9 @@ export class PokemonDetailsComponent {
   originalName;
   @Output() reset = new EventEmitter();
   @Input() group: FormGroup;
+  @Input() selectedPokemon: any;
 
   resetPokemonSubmit() {
     this.reset.emit();
-  }
-  
-  @Input() set selectedPokemon(value: PokemonMeta) {
-    if(value) this.originalName = value.name;
-    this.currentPokemon = Object.assign({}, value);
   }
 }
