@@ -5,7 +5,6 @@
         <h1>
            <span *ngIf="selectedPokemon?.id; else elseBlock">
             {{selectedPokemon.name}} 
-            <!-- <img [src]="selectedPokemon?.sprites"> -->
           </span>
           <ng-template #elseBlock>Click on a Pokemon Listing!</ng-template>
         </h1>
