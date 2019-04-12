@@ -19,6 +19,12 @@
     },
     "material": {
       "tags": []
+    },
+    "starship": {
+      "tags": []
+    },
+    "starship-e2e": {
+      "tags": []
     }
   }
 }
