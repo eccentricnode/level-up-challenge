@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Starships } from '@level/core-data';
 
 @Component({
@@ -9,7 +9,7 @@ import { Starships } from '@level/core-data';
 export class StarshipListComponent {
   @Input() starships: Starships[];
   @Input() readonly: false;
-  @Input() selected = new EventEmitter();
+  @Output() selected = new EventEmitter();
 
   selectStarshipSubmit(starship: Starships) {
     this.selected.emit(starship);

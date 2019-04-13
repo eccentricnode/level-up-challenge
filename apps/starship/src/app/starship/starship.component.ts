@@ -22,7 +22,8 @@ export class StarshipComponent implements OnInit {
   }
 
   selectStarship(starship: Starships) {
+    console.log(starship);
     this.selectedStarship = starship;
-    console.log(starship)
+    
   }
 }
