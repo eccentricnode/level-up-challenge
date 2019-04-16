@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Books } from '@level/core-data';
 
 @Component({
   selector: 'level-books-details',
@@ -8,8 +9,15 @@ import { FormGroup } from '@angular/forms';
 })
 export class BooksDetailsComponent {
   @Input() group: FormGroup;
-  @Input() selectedBook;
   @Output() reset = new EventEmitter();
+
+   @Input() set selectedBook(value: Books) { 
+    this.group.patchValue({
+      title: value.title,
+      authors: value.authors,
+      description: value.description,
+    });
+  }
 
   resetBookForm() {
     this.reset.emit();

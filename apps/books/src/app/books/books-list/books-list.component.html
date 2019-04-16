@@ -6,15 +6,15 @@
     <form [formGroup]="group">
       <mat-form-field>
         <input matInput formControlName="searchField" type="text" name="search"
-          placeholder="Search..." (keyup)="searchBooksSubmit()">
+          placeholder="Search..." (keyup)="searchBooksSubmit(group.value)">
       </mat-form-field>
     </form>
     <mat-list>
       <mat-list-item class="mat-list-option" *ngFor="let book of books"
-          (click)="selectBook(book)">
-        <span matLine>{{book.title}}</span>
-        <span matLine>{{book.author}}</span>
-        </mat-list-item>
+          (click)="selectBookSubmit(book)">
+        <span matLine>{{book.volumeInfo.title}}</span>
+        <span matLine>{{book.volumeInfo.authors}}</span>
+      </mat-list-item>
     </mat-list>
   </mat-card-content>
 </mat-card>

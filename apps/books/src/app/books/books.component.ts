@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { BooksService, Books } from '@level/core-data';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'level-books',
@@ -10,9 +11,8 @@ import { BooksService, Books } from '@level/core-data';
 })
 export class BooksComponent implements OnInit {
   form: FormGroup;
-  searchQuery: string;
-  searchResults: Books;
-  selectedBook;
+  searchResults$;
+  selectedBook: Books;
 
   constructor(
     private booksService: BooksService,
@@ -25,13 +25,11 @@ export class BooksComponent implements OnInit {
   }
 
   searchBooks(search) {
-    this.booksService.searchBooksApi(search)
-      .subscribe(res => this.searchResults = res);
-    console.log(this.searchResults);  
+    this.searchResults$ = this.booksService.searchBooksApi(search).pipe(map(res => res.items));  
   }
 
   selectBook(book) {
-    this.selectedBook = book;
+    this.selectedBook = book;  
   }
 
   resetBook() {
@@ -39,7 +37,6 @@ export class BooksComponent implements OnInit {
       title: '',
       authors: '',
       description: '',
-      mainCategory: ''
     }
     this.selectBook(emptyBook);
   }
@@ -53,7 +50,6 @@ export class BooksComponent implements OnInit {
         title: [{value: '', disabled: true}], 
         authors: [{value: '', disabled: true}],
         description: [{value: '', disabled: true}],
-        mainCategory: [{value: '', disabled: true}]
       })
     });
   }

@@ -12,12 +12,11 @@ export class BooksListComponent {
   @Output() searchQuery = new EventEmitter();
   @Output() selected = new EventEmitter();
 
-  searchBooksSubmit(books) {
-    this.searchQuery.emit(books);
-    console.log(books);
+  searchBooksSubmit(search) {
+    this.searchQuery.emit(search.searchField);
   }
 
-  selectBook(book) {
-    this.selected.emit(book);
+  selectBookSubmit(book) {
+    this.selected.emit(book.volumeInfo);
   }
 }

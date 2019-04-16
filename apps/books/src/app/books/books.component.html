@@ -3,7 +3,7 @@
     <level-books-list
       [group]="form.controls['search']"
       (searchQuery)="searchBooks($event)"
-      [books]="searchResults"
+      [books]="searchResults$ | async"
       (selected)="selectBook($event)">
     </level-books-list>
   </div>
