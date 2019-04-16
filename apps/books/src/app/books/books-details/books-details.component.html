@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-content>    
+    <form [formGroup]="group" class="card-content">
+      <mat-form-field>
+        <input matInput formControlName="title" name="title" type="text" placeholder="Title...">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput formControlName="authors" name="author" type="text" placeholder="Author/Authors"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="description" name="description" type="text" placeholder="Description">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput formControlName="mainCategory" name="mainCategory" type="text" placeholder="Genre..."></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button color="accent" mat-raised-button (click)="resetBookForm()">reset</button>
+  </mat-card-actions>
+</mat-card>

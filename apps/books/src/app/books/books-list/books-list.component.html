@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Search for a Book!</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="group">
+      <mat-form-field>
+        <input matInput formControlName="searchField" type="text" name="search"
+          placeholder="Search..." (keyup)="searchBooksSubmit()">
+      </mat-form-field>
+    </form>
+    <mat-list>
+      <mat-list-item class="mat-list-option" *ngFor="let book of books"
+          (click)="selectBook(book)">
+        <span matLine>{{book.title}}</span>
+        <span matLine>{{book.author}}</span>
+        </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
