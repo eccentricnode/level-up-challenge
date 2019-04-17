@@ -8,6 +8,7 @@
     "deploy:pokemon-app": "ng build --project pokemon && cp ./dist/apps/pokemon/index.html ./dist/apps/pokemon/200.html && surge ./dist/apps/pokemon/ https://pokemon-list.surge.sh/",
     "deploy:starship-app": "ng build --project starship && cp ./dist/apps/starship/index.html ./dist/apps/starship/200.html && surge ./dist/apps/starship/ https://starship-list.surge.sh/",
     "deploy:books-app": "ng build --project books && cp ./dist/apps/books/index.html ./dist/apps/books/200.html && surge ./dist/apps/books/ https://books-list.surge.sh/",
+    "deploy:youtube-app": "ng build --project youtube && cp ./dist/apps/youtube/index.html ./dist/apps/youtube/200.html && surge ./dist/apps/youtube/ https://youtube-api-playlist.surge.sh/",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
