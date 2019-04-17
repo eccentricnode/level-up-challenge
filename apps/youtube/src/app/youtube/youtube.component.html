@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-youtube-list
+      [playlist]="playlist$ | async"
+      (selected)="selectVideo($event)">
+    </level-youtube-list>
+  </div>
+
+  <div class="details-grid">
+    <level-youtube-details
+      [video]="currentVideo">
+    </level-youtube-details>
+  </div>
+</div>

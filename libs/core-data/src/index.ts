@@ -5,5 +5,7 @@ export { StarshipsService } from './lib/starships/starships.service';
 export { Starships } from './lib/starships/starships.model';
 export { BooksService } from './lib/books/books.service';
 export { Books } from './lib/books/books.model';
+export { YoutubeService } from './lib/youtube/youtube.service';
+export { Youtube } from './lib/youtube/youtube.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;

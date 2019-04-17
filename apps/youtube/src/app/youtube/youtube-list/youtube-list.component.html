@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>List of Youtube Playlist Videos</h2></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <h2 mat-subheader> My videos</h2>
+      <mat-list-item *ngFor="let video of playlist" class="mat-list-option"
+          (click)="videoSelectSubmit(video)">
+        <img mat-list-icon [src]="video.snippet.thumbnails?.high?.url"/>
+        <h2 mat-Line>{{video.snippet.title}}</h2>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

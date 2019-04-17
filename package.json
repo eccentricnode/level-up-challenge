@@ -51,10 +51,12 @@
     "zone.js": "^0.9.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.1",
-    "@angular/cli": "7.3.8",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
+    "@angular-devkit/build-angular": "~0.13.1",
+    "codelyzer": "~4.5.0",
+    "protractor": "~5.4.0",
+    "@angular/cli": "7.3.8",
     "@ngrx/schematics": "7.2.0",
     "@ngrx/store-devtools": "7.2.0",
     "@nrwl/builders": "^7.8.1",
@@ -63,7 +65,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "3.3.6",
     "@types/node": "~8.9.4",
-    "codelyzer": "~4.5.0",
     "cypress": "^3.1.0",
     "dotenv": "6.2.0",
     "jasmine-core": "~2.99.1",
@@ -76,7 +77,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ngrx-store-freeze": "0.2.4",
     "prettier": "1.15.2",
-    "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
