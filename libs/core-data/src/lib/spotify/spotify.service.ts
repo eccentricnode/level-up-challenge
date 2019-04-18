@@ -20,7 +20,7 @@ export class SpotifyService {
     params = params.append('limit', '20');
 
     return this.http.get<any>(`${URL}`, { params} )
-      .pipe(map(res => res));
+      .pipe(map(res => res.artists.items));
   }
 
   getArtist(id: string) {

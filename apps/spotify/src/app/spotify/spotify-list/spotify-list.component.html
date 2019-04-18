@@ -20,6 +20,7 @@
       <mat-list-item class="mat-list-option" *ngFor="let artist of artists"
           (click)="selectArtistSubmit(artist)">
         <span matLine></span>
+        <pre>{{artists | json}}</pre>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

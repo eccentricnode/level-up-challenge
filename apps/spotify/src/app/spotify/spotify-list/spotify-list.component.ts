@@ -14,10 +14,10 @@ export class SpotifyListComponent {
 
   searchArtistsSubmit(search) {
     this.searchQuery.emit(search);
+    console.log(this.artists);
   }
 
   selectArtistSubmit(artist) {
-    console.log(this.artists);
     this.selected.emit(artist);
   }
 }
