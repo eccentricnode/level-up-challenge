@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './pokemon/pokemon.service';
+import { TokenInterceptor } from './auth/token-interceptor.service';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { PokemonService } from './pokemon/pokemon.service';
     HttpClientModule
   ],
   providers:[
-    PokemonService
+    PokemonService,
+    TokenInterceptor
   ]
 })
 export class CoreDataModule {}

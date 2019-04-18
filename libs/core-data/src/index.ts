@@ -7,5 +7,8 @@ export { BooksService } from './lib/books/books.service';
 export { Books } from './lib/books/books.model';
 export { YoutubeService } from './lib/youtube/youtube.service';
 export { Youtube } from './lib/youtube/youtube.model';
+export { SpotifyService } from './lib/spotify/spotify.service';
+export { Spotify } from './lib/spotify/spotify.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
+export { TokenInterceptor } from './lib/auth/token-interceptor.service';

@@ -554,6 +554,127 @@
           }
         }
       }
+    },
+    "spotify": {
+      "root": "apps/spotify/",
+      "sourceRoot": "apps/spotify/src",
+      "projectType": "application",
+      "prefix": "level",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/spotify",
+            "index": "apps/spotify/src/index.html",
+            "main": "apps/spotify/src/main.ts",
+            "polyfills": "apps/spotify/src/polyfills.ts",
+            "tsConfig": "apps/spotify/tsconfig.app.json",
+            "assets": [
+              "apps/spotify/src/favicon.ico",
+              "apps/spotify/src/assets"
+            ],
+            "styles": ["apps/spotify/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/spotify/src/environments/environment.ts",
+                  "with": "apps/spotify/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "spotify:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "spotify:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "spotify:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/spotify/tsconfig.app.json",
+              "apps/spotify/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/spotify/src/test.ts",
+            "tsConfig": "apps/spotify/tsconfig.spec.json",
+            "karmaConfig": "apps/spotify/karma.conf.js",
+            "polyfills": "apps/spotify/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "spotify-e2e": {
+      "root": "apps/spotify-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/spotify-e2e/protractor.conf.js",
+            "devServerTarget": "spotify:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spotify:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/spotify-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -37,6 +37,12 @@
     },
     "youtube-e2e": {
       "tags": []
+    },
+    "spotify": {
+      "tags": []
+    },
+    "spotify-e2e": {
+      "tags": []
     }
   }
 }

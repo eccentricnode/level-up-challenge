@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-spotify-list
+      [group]="form.controls['search']"
+      (searchQuery)="searchMusic($event)"
+      [artists]="searchResults$ | async"
+      (selected)="selectArtist($event)">
+    </level-spotify-list>
+  </div>
+
+  <div class="details-grid">
+    <level-spotify-details
+      >
+    </level-spotify-details>
+  </div>
+</div>
