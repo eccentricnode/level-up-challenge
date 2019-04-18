@@ -10,7 +10,8 @@
 
   <div class="details-grid">
     <level-spotify-details
-      >
+      [group]="form.controls['artistInfo']"
+      [selectedArtist]="selectedArtist">
     </level-spotify-details>
   </div>
 </div>

@@ -18,25 +18,27 @@ export class SpotifyComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.albumForm();
+    this.artistForm();
   }
 
   searchMusic(search) {
     this.searchResults$ =  this.spotifyService.searchMusic(search.searchField);
-    console.log(this.searchResults$);
   }
 
   selectArtist(artist) {
     this.selectedArtist = artist;
+    console.log(this.selectedArtist);    
   }
 
-  albumForm() {
+  artistForm() {
     this.form = this.formBuilder.group({
       search: this.formBuilder.group({
         searchField: ['', Validators.required]
       }),
-      albumList: this.formBuilder.group({
-
+      artistInfo: this.formBuilder.group({
+        name: [{value: '', disabled: true}],
+        genres: [{value: '', disabled: true}],
+        followers: [{value: '', disabled: true}]
       })
     });
   }
