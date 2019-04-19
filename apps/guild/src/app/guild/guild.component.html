@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-guild-list
+      [achievements]="achievements$ | async"
+      (selected)="selectAchievement($event)">
+    </level-guild-list>
+  </div>
+
+  <div class="details-grid">
+    <level-guild-details
+      [group]="form"
+      [selectedAchievement]="selectedAchievement"
+      (reset)="resetAchievement($event)">
+    </level-guild-details>
+  </div>
+</div>

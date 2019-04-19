@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="group" class="card-content">
+      <mat-form-field>
+        <h2>
+          <input matInput formControlName="name" name="name" type="text" placeholder="Name of Achievement...">
+        </h2>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="description" name="description" type="text" placeholder="Description of Achievement">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="requirement" name="requirement" type="text" placeholder="Requirements of Achievement">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button color="accent" mat-raised-button (click)="resetAchievementForm()">reset</button>
+  </mat-card-actions>
+</mat-card>
