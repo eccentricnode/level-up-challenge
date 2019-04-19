@@ -1,17 +1,17 @@
 <mat-card>
   <mat-card-content>
     <!-- <img [src]="a" -->
-    <form [formGroup]="group" class="card-content">
+    <form [formGroup]="detailsGroup" class="card-content">
       <mat-form-field>
         <h2>
-          <input matInput formControlname="name" name="name" type="text" placeholder="Name of Artist...">
+          <input matInput formControlName="name" name="name" type="text" placeholder="Name of Artist...">
         </h2>
       </mat-form-field>
       <mat-form-field>
-        <textarea matInput formControlname="genres" name="genres" type="text" placeholder="Genres..."></textarea>
+        <textarea matInput formControlName="genres" name="genres" type="text" placeholder="Genres..."></textarea>
       </mat-form-field>
       <mat-form-field>
-        <input matInput formControlname="followers" name="followers" type="text" placeholder="Number of Followers...">
+        <input matInput formControlName="followers" name="followers" type="text" placeholder="Number of Followers...">
       </mat-form-field>
     </form>
   </mat-card-content>

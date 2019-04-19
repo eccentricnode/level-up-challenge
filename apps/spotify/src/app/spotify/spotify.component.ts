@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SpotifyService } from '@level/core-data';
+import { SpotifyService, Spotify } from '@level/core-data';
 
 @Component({
   selector: 'level-spotify',
@@ -10,7 +10,7 @@ import { SpotifyService } from '@level/core-data';
 export class SpotifyComponent implements OnInit {
   form: FormGroup;
   searchResults$;
-  selectedArtist;
+  selectedArtist: Spotify;
 
   constructor(
     private spotifyService: SpotifyService,
@@ -27,7 +27,11 @@ export class SpotifyComponent implements OnInit {
 
   selectArtist(artist) {
     this.selectedArtist = artist;
-    console.log(this.selectedArtist);    
+    this.form.controls.artistInfo.patchValue({
+      name: artist.name,
+      genres: artist.genres,
+      followers: artist.followers.total
+    }); 
   }
 
   artistForm() {
