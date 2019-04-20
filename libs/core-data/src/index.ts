@@ -11,6 +11,8 @@ export { SpotifyService } from './lib/spotify/spotify.service';
 export { Spotify } from './lib/spotify/spotify.model';
 export { GuildService } from './lib/guild/guild.service';
 export { Guild } from './lib/guild/guild.model';
+export { AirService } from './lib/air/air.service';
+export { Air } from './lib/air/air.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';

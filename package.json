@@ -11,6 +11,7 @@
     "deploy:youtube-app": "ng build --project youtube && cp ./dist/apps/youtube/index.html ./dist/apps/youtube/200.html && surge ./dist/apps/youtube/ https://youtube-api-playlist.surge.sh/",
     "deploy:spotify-app": "ng build --project spotify && cp ./dist/apps/spotify/index.html ./dist/apps/spotify/200.html && surge ./dist/apps/spotify/ https://my-spotify-search.surge.sh/",
     "deploy:guildWars-app": "ng build --project guild && cp ./dist/apps/guild/index.html ./dist/apps/guild/200.html && surge ./dist/apps/guild/ https://guildwars-achievements.surge.sh/",
+    "deploy:airQuality-app": "ng build --project air && cp ./dist/apps/air/index.html ./dist/apps/air/200.html && surge ./dist/apps/air/ https://air-quality-list.surge.sh/",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",

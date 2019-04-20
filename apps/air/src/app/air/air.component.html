@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-air-list
+      [cities]="airQuality$ | async"
+      (selected)="selectCity($event)">
+    </level-air-list>
+  </div>
+
+  <div class="details-grid">
+    <level-air-details
+      [detailsGroup]="form"
+      [selectedCity]="selectedCity"
+      (reset)="resetCity($event)">
+    </level-air-details>
+  </div>
+</div>
