@@ -15,6 +15,8 @@ export { AirService } from './lib/air/air.service';
 export { Air } from './lib/air/air.model';
 export { EmpiresService } from './lib/empires/empires.service';
 export { Empires } from './lib/empires/empires.model';
+export { RocketsService } from './lib/rockets/rockets.service';
+export { Rockets } from './lib/rockets/rockets.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';
