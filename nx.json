@@ -55,6 +55,18 @@
     },
     "air-e2e": {
       "tags": []
+    },
+    "empires": {
+      "tags": []
+    },
+    "empires-e2e": {
+      "tags": []
+    },
+    "rockets": {
+      "tags": []
+    },
+    "rockets-e2e": {
+      "tags": []
     }
   }
 }

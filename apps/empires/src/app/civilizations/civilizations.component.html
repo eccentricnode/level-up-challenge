@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-civilizations-list
+      [civilizations]="civilizations$ | async"
+      (selected)="selectCivilization($event)">
+    </level-civilizations-list>
+  </div>
+
+  <div class="details-grid">
+    <level-civilizations-details
+      [detailsGroup]="form"
+      [selectedCivilation]="selectCivilization"
+      (reset)="resetCivilzation($event)">
+    </level-civilizations-details>
+  </div>
+</div>
