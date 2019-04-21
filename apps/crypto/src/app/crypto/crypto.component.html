@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-crypto-list
+      [coins]="cryptoCoins$ | async"
+      (selected)="selectCoin($event)">
+    </level-crypto-list>
+  </div>
+
+  <div class="details-grid">
+    <level-crypto-details
+      [detailsGroup]="form"
+      [selectedCoin]="selectedCoin"
+      (reset)="resetCoin($event)">
+    </level-crypto-details>
+  </div>
+</div>

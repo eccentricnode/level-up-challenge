@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="detailsGroup" class="card-content">
+      <mat-form-field>
+        <h2>
+          <input matInput formControlName="name" name="name" type="text" placeholder="Name of Cryptocurrency...">
+        </h2>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="rank" name="rank" type="text" placeholder="Current Rank of Coin">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="price_usd" name="price_usd" type="text" placeholder="Value in USD">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="percent_change_24h" name="percent_change_24h" type="text" placeholder="% Change in 24 hrs">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="percent_change_7d" name="percent_change_7d" type="text" placeholder="% Change in 7 days">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>

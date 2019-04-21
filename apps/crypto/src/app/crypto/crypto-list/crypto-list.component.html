@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Cryptocurrency List</mat-card-title>
+      <br>
+    <mat-card-subtitle>Select a CryptoCurrency</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item class="mat-list-option" *ngFor="let coin of coins"
+          (click)="selectCoinSubmit(coin)">
+        <span matLine><strong>Name: </strong> {{coin.name}}</span>
+        <span matLine><strong>Rank: </strong> {{coin.rank}}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

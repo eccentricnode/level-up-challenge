@@ -17,6 +17,8 @@ export { EmpiresService } from './lib/empires/empires.service';
 export { Empires } from './lib/empires/empires.model';
 export { RocketsService } from './lib/rockets/rockets.service';
 export { Rockets } from './lib/rockets/rockets.model';
+export { CryptoService } from './lib/crypto/crypto.service';
+export { Crypto } from './lib/crypto/crypto.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';
