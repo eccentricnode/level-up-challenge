@@ -13,12 +13,12 @@ export { GuildService } from './lib/guild/guild.service';
 export { Guild } from './lib/guild/guild.model';
 export { AirService } from './lib/air/air.service';
 export { Air } from './lib/air/air.model';
-export { EmpiresService } from './lib/empires/empires.service';
-export { Empires } from './lib/empires/empires.model';
 export { RocketsService } from './lib/rockets/rockets.service';
 export { Rockets } from './lib/rockets/rockets.model';
 export { CryptoService } from './lib/crypto/crypto.service';
 export { Crypto } from './lib/crypto/crypto.model';
+export { Dota2Service } from './lib/dota2/dota2.service';
+export { Dota2 } from './lib/dota2/dota2.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';
