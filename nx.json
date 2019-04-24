@@ -8,12 +8,6 @@
     "nx.json": "*"
   },
   "projects": {
-    "pokemon": {
-      "tags": []
-    },
-    "pokemon-e2e": {
-      "tags": []
-    },
     "core-data": {
       "tags": []
     },
@@ -78,6 +72,12 @@
       "tags": []
     },
     "dota2-e2e": {
+      "tags": []
+    },
+    "pokemon": {
+      "tags": []
+    },
+    "pokemon-e2e": {
       "tags": []
     }
   }

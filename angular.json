@@ -3,136 +3,6 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "pokemon": {
-      "root": "apps/pokemon/",
-      "sourceRoot": "apps/pokemon/src",
-      "projectType": "application",
-      "prefix": "level",
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "styleext": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/pokemon",
-            "index": "apps/pokemon/src/index.html",
-            "main": "apps/pokemon/src/main.ts",
-            "polyfills": "apps/pokemon/src/polyfills.ts",
-            "tsConfig": "apps/pokemon/tsconfig.app.json",
-            "assets": [
-              "apps/pokemon/src/favicon.ico",
-              "apps/pokemon/src/assets"
-            ],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "apps/pokemon/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/pokemon/src/environments/environment.ts",
-                  "with": "apps/pokemon/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "pokemon:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "pokemon:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "pokemon:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/pokemon/src/test.ts",
-            "polyfills": "apps/pokemon/src/polyfills.ts",
-            "tsConfig": "apps/pokemon/tsconfig.spec.json",
-            "karmaConfig": "apps/pokemon/karma.conf.js",
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "apps/pokemon/src/styles.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/pokemon/src/favicon.ico",
-              "apps/pokemon/src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/pokemon/tsconfig.app.json",
-              "apps/pokemon/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "pokemon-e2e": {
-      "root": "apps/pokemon-e2e",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/builders:cypress",
-          "options": {
-            "cypressConfig": "apps/pokemon-e2e/cypress.json",
-            "tsConfig": "apps/pokemon-e2e/tsconfig.e2e.json",
-            "devServerTarget": "pokemon:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "pokemon:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/pokemon-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
     "core-data": {
       "root": "libs/core-data",
       "sourceRoot": "libs/core-data/src",
@@ -192,127 +62,6 @@
       "schematics": {
         "@nrwl/schematics:component": {
           "styleext": "scss"
-        }
-      }
-    },
-    "starship": {
-      "root": "apps/starship/",
-      "sourceRoot": "apps/starship/src",
-      "projectType": "application",
-      "prefix": "level",
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "style": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/starship",
-            "index": "apps/starship/src/index.html",
-            "main": "apps/starship/src/main.ts",
-            "polyfills": "apps/starship/src/polyfills.ts",
-            "tsConfig": "apps/starship/tsconfig.app.json",
-            "assets": [
-              "apps/starship/src/favicon.ico",
-              "apps/starship/src/assets"
-            ],
-            "styles": ["apps/starship/src/styles.scss"],
-            "scripts": [],
-            "es5BrowserSupport": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/starship/src/environments/environment.ts",
-                  "with": "apps/starship/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "starship:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "starship:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "starship:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/starship/tsconfig.app.json",
-              "apps/starship/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/starship/src/test.ts",
-            "tsConfig": "apps/starship/tsconfig.spec.json",
-            "karmaConfig": "apps/starship/karma.conf.js",
-            "polyfills": "apps/starship/src/polyfills.ts",
-            "styles": [],
-            "scripts": [],
-            "assets": []
-          }
-        }
-      }
-    },
-    "starship-e2e": {
-      "root": "apps/starship-e2e",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/starship-e2e/protractor.conf.js",
-            "devServerTarget": "starship:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "starship:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/starship-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -1385,6 +1134,127 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/dota2-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "pokemon": {
+      "root": "apps/pokemon/",
+      "sourceRoot": "apps/pokemon/src",
+      "projectType": "application",
+      "prefix": "level",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pokemon",
+            "index": "apps/pokemon/src/index.html",
+            "main": "apps/pokemon/src/main.ts",
+            "polyfills": "apps/pokemon/src/polyfills.ts",
+            "tsConfig": "apps/pokemon/tsconfig.app.json",
+            "assets": [
+              "apps/pokemon/src/favicon.ico",
+              "apps/pokemon/src/assets"
+            ],
+            "styles": ["apps/pokemon/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pokemon/src/environments/environment.ts",
+                  "with": "apps/pokemon/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pokemon:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pokemon:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pokemon:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pokemon/tsconfig.app.json",
+              "apps/pokemon/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/pokemon/src/test.ts",
+            "tsConfig": "apps/pokemon/tsconfig.spec.json",
+            "karmaConfig": "apps/pokemon/karma.conf.js",
+            "polyfills": "apps/pokemon/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "pokemon-e2e": {
+      "root": "apps/pokemon-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/pokemon-e2e/protractor.conf.js",
+            "devServerTarget": "pokemon:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pokemon:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/pokemon-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }
