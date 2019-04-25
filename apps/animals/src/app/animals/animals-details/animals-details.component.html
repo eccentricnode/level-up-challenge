@@ -1,0 +1,32 @@
+<mat-card>
+  <form [formGroup]="detailsGroup">
+    <mat-card-content class="card-content">
+      <mat-form-field>
+        <input matInput formControlName="name"
+          type="text" placeholder="Animal Name*">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="height"
+          type="text" placeholder="Animal's Height*">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="mass"
+          type="text" placeholder="Mass of Animal*">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="continent"
+          type="text" placeholder="Origin of Animal*">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="primary" mat-raised-button
+        (click)="saveAnimalSubmit(detailsGroup)">
+        Submit
+      </button>
+      <button color="accent" mat-raised-button
+        (click)="cancelAnimalSubmit(selectedAnimal)">
+        Cancel
+    </button>
+    </mat-card-actions>
+  </form>
+</mat-card>

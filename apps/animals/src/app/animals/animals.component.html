@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-animals-list
+      [animals]="animals$ | async"
+      (selected)="selectAnimal($event)"
+      (deleted)="deleteAnimal($event)">
+    </level-animals-list>
+  </div>
+
+  <div class="details-grid">
+    <level-animals-details
+      [detailsGroup]="form"
+      [selectedAnimal]="selectedAnimal"
+      (selected)="selectAnimal($event)"
+      (cancelled)="cancel($event)">
+    </level-animals-details>
+  </div>
+</div>

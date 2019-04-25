@@ -19,6 +19,8 @@ export { CryptoService } from './lib/crypto/crypto.service';
 export { Crypto } from './lib/crypto/crypto.model';
 export { Dota2Service } from './lib/dota2/dota2.service';
 export { Dota2 } from './lib/dota2/dota2.model';
+export { AnimalsService } from './lib/animals/animals.service';
+export { Animals } from './lib/animals/animals.model';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';

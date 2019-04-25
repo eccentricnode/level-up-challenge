@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Animal's List</h2>
+      <br>
+    <h3>Select an Animal!</h3>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let animal of animals"
+        (click)="selectAnimalSubmit(animal)" class="mat-list-option">
+        <span matLine><strong>Animal Name: </strong>{{animal.name}}</span>
+        <span matLine><strong>Continent of Origin: </strong>{{animal.continent}}</span>
+        <button *ngIf="!readonly" mat-mini-fab
+          (click)="deleted.emit(animal);$event.stopImmediatePropagation();">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

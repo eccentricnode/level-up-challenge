@@ -14,7 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "@level/core-data": ["libs/core-data/src/index.ts"],
-      "@level/material": ["libs/material/src/index.ts"]
+      "@level/material": ["libs/material/src/index.ts"],
+      "core-js/es7/reflect": ["node_modules/core-js/proposals/reflect-metadata"],
+      "core-js/es6/*": ["node_modules/core-js/es/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]
