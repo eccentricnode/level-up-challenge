@@ -22,13 +22,11 @@ export class AnimalsDetailsComponent {
     });
   }
 
-  saveAnimalSubmit(animal: Animal) {
-    if(this.detailsGroup.valid) {
-      this.saved.emit(animal);
-    } 
+  saveAnimalSubmit(animal) {
+    this.saved.emit(animal.value);
   }
   
-  cancelAnimalSubmit() {
-    this.cancelled.emit();
+  cancelAnimalSubmit(animal) {
+    this.cancelled.emit(animal);
   }
 }

@@ -43,10 +43,6 @@ export class AnimalsComponent implements OnInit {
     })
   }
 
-  getAnimals() {
-    this.animals$ = this.animalsService.all();
-  }
-
   saveAnimal(animal) {
     if(!animal.id) {
       this.animalsFacade.addAnimal(animal);
@@ -56,7 +52,7 @@ export class AnimalsComponent implements OnInit {
   }
 
 
-  deleteAnimal(animal) {
-    this.animalsFacade.deleteAnimal(animal);
+  deleteAnimal(animal) {console.log(animal)
+    this.animalsFacade.deleteAnimal(animal.id);
   }
 }
