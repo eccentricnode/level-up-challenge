@@ -28,6 +28,7 @@ export class AnimalsComponent implements OnInit {
 
   resetCurrentAnimal() {
     this.selectAnimal({id: null})
+    this.form.reset();
   }
 
   selectAnimal(animal) {
@@ -36,6 +37,7 @@ export class AnimalsComponent implements OnInit {
 
   initForm() {
     this.form = this.formBuilder.group({
+      id: null,
       name: ['', Validators.compose([Validators.required])],
       height: ['', Validators.compose([Validators.required])],
       mass: ['', Validators.compose([Validators.required])],
@@ -51,8 +53,7 @@ export class AnimalsComponent implements OnInit {
     }
   }
 
-
-  deleteAnimal(animal) {console.log(animal)
-    this.animalsFacade.deleteAnimal(animal.id);
+  deleteAnimal(animal) {
+    this.animalsFacade.deleteAnimal(animal);
   }
 }

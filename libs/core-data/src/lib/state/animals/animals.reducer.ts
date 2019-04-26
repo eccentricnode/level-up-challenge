@@ -27,7 +27,7 @@ export function animalsReducer(state = initialState, action: AnimalsActions): An
       return adapter.addOne(action.payload, state);
     }
 
-    case AnimalsActionTypes.AnimalUpdated: {
+    case AnimalsActionTypes.AnimalUpdated: {console.log(action.payload);
       return adapter.upsertOne(action.payload, state);
     }
 

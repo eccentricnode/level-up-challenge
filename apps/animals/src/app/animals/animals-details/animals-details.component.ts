@@ -15,6 +15,7 @@ export class AnimalsDetailsComponent {
   @Input() set selectedAnimal(value: Animal) {
     if(!value) return;
     this.detailsGroup.patchValue({
+      id: value.id,
       name: value.name,
       height: value.height,
       mass: value.mass,
