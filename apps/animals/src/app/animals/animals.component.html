@@ -10,9 +10,9 @@
   <div class="details-grid">
     <level-animals-details
       [detailsGroup]="form"
-      [selectedAnimal]="selectedAnimal"
-      (selected)="selectAnimal($event)"
-      (cancelled)="cancel($event)">
+      [selectedAnimal]="currentAnimal$ | async"
+      (saved)="saveAnimal($event)"
+      (cancelled)="resetCurrentAnimal($event)">
     </level-animals-details>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AnimalsService, Animals } from '@level/core-data';
+import { Observable } from 'rxjs';
+import { AnimalsService, Animal, AnimalsFacade } from '@level/core-data';
 
 @Component({
   selector: 'level-animals',
@@ -9,22 +10,28 @@ import { AnimalsService, Animals } from '@level/core-data';
 })
 export class AnimalsComponent implements OnInit {
   form: FormGroup;
-  animals$;
-  selectedAnimal: Animals;
+  animals$: Observable<Animal[]> = this.animalsFacade.allAnimals$;
+  currentAnimal$: Observable<Animal> = this.animalsFacade.currentAnimal$;
 
   constructor(
     private formBuilder: FormBuilder,
-    private animalsService: AnimalsService
+    private animalsService: AnimalsService,
+    private animalsFacade: AnimalsFacade,
   ) { }
 
   ngOnInit() {
     this.initForm();
-    this.getAnimals();
-    this.resetAnimal();
+    this.animalsFacade.loadAnimals();
+    this.animalsFacade.mutations$.subscribe(_=> this.resetCurrentAnimal());
+    this.resetCurrentAnimal();
+  }
+
+  resetCurrentAnimal() {
+    this.selectAnimal({id: null})
   }
 
   selectAnimal(animal) {
-    this.selectedAnimal = animal;
+    this.animalsFacade.selectAnimal(animal.id);
   }
 
   initForm() {
@@ -36,51 +43,20 @@ export class AnimalsComponent implements OnInit {
     })
   }
 
-  resetAnimal() {
-    const emptyAnimal: Animals = {
-      id: null,
-      name: '',
-      height: '',
-      mass: null,
-      continent: ''
-    }
-    this.selectAnimal(emptyAnimal);
-  }
-
   getAnimals() {
     this.animals$ = this.animalsService.all();
   }
 
   saveAnimal(animal) {
     if(!animal.id) {
-      this.createAnimal(animal);
+      this.animalsFacade.addAnimal(animal);
     } else {
-      this.updateAnimal(animal);
+      this.animalsFacade.updateAnimal(animal);
     }
   }
 
-  createAnimal(animal) {
-    this.animalsService.create(animal)
-      .subscribe(result => {
-        this.getAnimals();
-        this.resetAnimal();
-    });
-  }
-
-  updateAnimal(animal) {
-    this.animalsService.update(animal) 
-      .subscribe(result => {
-        this.getAnimals();
-        this.cancel();
-      });
-  }
 
   deleteAnimal(animal) {
-    this.animalsService.delete(animal.id) 
-      .subscribe(result => this.getAnimals());
-  }
-  
-  cancel() {
-    this.resetAnimal();
+    this.animalsFacade.deleteAnimal(animal);
   }
 }

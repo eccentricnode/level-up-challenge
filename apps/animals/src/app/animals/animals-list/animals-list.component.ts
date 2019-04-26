@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Animals } from '@level/core-data';
+import { Animal } from '@level/core-data';
 
 @Component({
   selector: 'level-animals-list',
@@ -7,11 +7,11 @@ import { Animals } from '@level/core-data';
   styleUrls: ['./animals-list.component.scss']
 })
 export class AnimalsListComponent {
-  @Input() animals: Animals;
+  @Input() animals: Animal;
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();
 
-  selectAnimalSubmit() {
-    this.selected.emit();
+  selectAnimalSubmit(animal) {
+    this.selected.emit(animal);
   }
 }

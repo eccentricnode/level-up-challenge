@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Animals } from '@level/core-data';
+import { Animal } from '@level/core-data';
 
 @Component({
   selector: 'level-animals-details',
@@ -12,7 +12,7 @@ export class AnimalsDetailsComponent {
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
 
-  @Input() set selectedAnimal(value: Animals) {
+  @Input() set selectedAnimal(value: Animal) {
     if(!value) return;
     this.detailsGroup.patchValue({
       name: value.name,
@@ -22,7 +22,7 @@ export class AnimalsDetailsComponent {
     });
   }
 
-  saveAnimalSubmit(animal: Animals) {
+  saveAnimalSubmit(animal: Animal) {
     if(this.detailsGroup.valid) {
       this.saved.emit(animal);
     } 
