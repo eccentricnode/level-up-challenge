@@ -9,14 +9,14 @@ import { MaterialModule } from '@level/material';
 import { CoreDataModule } from '@level/core-data';
 
 import { AppComponent } from './app.component';
-import { AnimalsComponent } from './animals/animals.component';
-import { AnimalsListComponent } from './animals/animals-list/animals-list.component';
-import { AnimalsDetailsComponent } from './animals/animals-details/animals-details.component';
+import { InstrumentComponent } from './instrument/instrument.component';
+import { InstrumentDetailsComponent } from './instrument/instrument-details/instrument-details.component';
+import { InstrumentListComponent } from './instrument/instrument-list/instrument-list.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, AnimalsComponent, AnimalsListComponent, AnimalsDetailsComponent, LoginComponent],
+  declarations: [AppComponent, InstrumentComponent, InstrumentDetailsComponent, InstrumentListComponent, LoginComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),

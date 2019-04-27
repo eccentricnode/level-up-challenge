@@ -6,8 +6,10 @@ import { AnimalsEffects } from './animals/animals.effects';
 import { AnimalsFacade } from './animals/animals.facade';
 import { NxModule } from '@nrwl/nx';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { storeFreeze } from 'ngrx-store-freeze';
 import { reducers } from '.';
+
+import { InstrumentEffects } from './instruments/instrument.effects';
+import { InstrumentFacade } from './instruments/instrument.facade';
 
 @NgModule({
   declarations: [],
@@ -16,8 +18,8 @@ import { reducers } from '.';
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 10 }),
-    EffectsModule.forRoot([AnimalsEffects]),
+    EffectsModule.forRoot([AnimalsEffects, InstrumentEffects]),
   ],
-  providers: [AnimalsFacade]
+  providers: [AnimalsFacade, InstrumentFacade]
 })
 export class StateModule {}

@@ -22,6 +22,9 @@ export { Dota2 } from './lib/dota2/dota2.model';
 export { AnimalsService } from './lib/animals/animals.service';
 export { Animal } from './lib/animals/animal.model';
 export { AnimalsFacade } from './lib/state/animals/animals.facade';
+export { InstrumentService } from './lib/instrument/instrument.service';
+export { Instrument } from './lib/instrument/instrument.model';
+export { InstrumentFacade } from './lib/state/instruments/instrument.facade';
 
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';

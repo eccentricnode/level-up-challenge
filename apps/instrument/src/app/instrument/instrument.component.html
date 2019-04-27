@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="list-grid">
+    <level-instrument-list
+      [instruments]="instruments$ | async"
+      (selected)="selectInstrument($event)"
+      (deleted)="deleteInstrument($event)">
+    </level-instrument-list>
+  </div>
+
+  <div class="details-grid">
+    <level-instrument-details
+      [detailsGroup]="form"
+      [selectedInstrument]="currentInstrument$ | async"
+      (saved)="saveInstrument($event)"
+      (cancelled)="resetCurrentInstrument($event)">
+    </level-instrument-details>
+  </div>
+</div>

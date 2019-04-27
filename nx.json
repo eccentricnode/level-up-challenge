@@ -85,6 +85,12 @@
     },
     "animals-e2e": {
       "tags": []
+    },
+    "instrument": {
+      "tags": []
+    },
+    "instrument-e2e": {
+      "tags": []
     }
   }
 }
