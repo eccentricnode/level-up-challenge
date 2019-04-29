@@ -25,6 +25,10 @@ export { AnimalsFacade } from './lib/state/animals/animals.facade';
 export { InstrumentService } from './lib/instrument/instrument.service';
 export { Instrument } from './lib/instrument/instrument.model';
 export { InstrumentFacade } from './lib/state/instruments/instrument.facade';
+export { StarshipsService } from './lib/starships/starships.service';
+export { Starship } from './lib/starships/starship.model';
+export { StarshipsFacade } from './lib/state/starships/starships.facade';
 
+export { StateModule } from './lib/state/state.module';
 export { CoreDataModule } from './lib/core-data.module' ;
 export { TokenInterceptor } from './lib/auth/token-interceptor.service';

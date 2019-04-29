@@ -2,18 +2,22 @@ import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/s
 
 import * as fromAnimals from './animals/animals.reducer';
 import * as fromInstruments from './instruments/instrument.reducer';
+import * as fromStarships from './starships/starships.reducer';
 
 import { Animal } from '../animals/animal.model';
 import { Instrument } from '../instrument/instrument.model';
+import { Starship } from '../starships/starship.model';
 
 export interface AppState {
     animals: fromAnimals.AnimalsState,
-    instruments: fromInstruments.InstrumentsState
+    instruments: fromInstruments.InstrumentsState,
+    starships: fromStarships.StarshipsState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
     animals: fromAnimals.animalsReducer,
-    instruments: fromInstruments.instrumentsReducer
+    instruments: fromInstruments.instrumentsReducer,
+    starships: fromStarships.starshipsReducer
 }
 
 //-------------------------------------------------------------------
@@ -90,5 +94,44 @@ export const selectCurrentInstrument = createSelector(
     selectCurrentInstrumentId,
     (instrumentEntities, instrumentId) => {
         return instrumentId ? instrumentEntities[instrumentId] : emptyInstrument;
+    }
+);
+
+// ------------------------------------------------------------------
+// STARSHIPS SELECTORS
+// ------------------------------------------------------------------
+export const selectStarshipsState = createFeatureSelector<fromStarships.StarshipsState>('starships');
+
+export const selectStarshipIds = createSelector(
+    selectStarshipsState,
+    fromStarships.selectStarshipIds
+);
+export const selectStarshipEntities = createSelector(
+    selectStarshipsState,
+    fromStarships.selectStarshipEntities
+);
+export const selectAllStarships = createSelector(
+    selectStarshipsState,
+    fromStarships.selectAllStarships
+);
+export const selectCurrentStarshipId = createSelector(
+    selectStarshipsState,
+    fromStarships.getSelectedStarshipId
+);
+
+const emptyStarship: Starship = {
+    name: '',
+    model: '',
+    manufacturer: '',
+    crew: '',
+    passengers: '',
+    cargo_capacity: ''
+}
+
+export const selectCurrentStarship = createSelector(
+    selectStarshipEntities,
+    selectCurrentStarshipId,
+    (starshipEntities, starshipId) => {
+        return starshipId ? starshipEntities[starshipId] : emptyStarship;
     }
 );

@@ -11,6 +11,10 @@ import { reducers } from '.';
 import { InstrumentEffects } from './instruments/instrument.effects';
 import { InstrumentFacade } from './instruments/instrument.facade';
 
+import { StarshipsEffects } from './starships/starships.effects';
+import { StarshipsFacade } from './starships/starships.facade';
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -18,8 +22,8 @@ import { InstrumentFacade } from './instruments/instrument.facade';
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 10 }),
-    EffectsModule.forRoot([AnimalsEffects, InstrumentEffects]),
+    EffectsModule.forRoot([AnimalsEffects, InstrumentEffects, StarshipsEffects]),
   ],
-  providers: [AnimalsFacade, InstrumentFacade]
+  providers: [AnimalsFacade, InstrumentFacade, StarshipsFacade]
 })
 export class StateModule {}

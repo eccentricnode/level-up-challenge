@@ -13,7 +13,7 @@ import { StateModule } from './state/state.module';
   ],
   providers:[
     PokemonService,
-    TokenInterceptor
+    TokenInterceptor,
   ],
   declarations: []
 })
